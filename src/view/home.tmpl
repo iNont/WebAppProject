@@ -5,6 +5,10 @@
       <textarea rows="4" cols="50" placeholder="Enter Paragraph" ng-model="ctrl.userInput"></textarea>
       <input class="btn btn-primary" type="submit" value="Search">
     </form>
-    {{ctrl.userInput}}
+    <div ng-repeat="sentence in ctrl.result">
+      Sentence: {{sentence.sentence}} <br/>
+      <span ng-if="sentence.status == 1">Found in {{sentence.filename}}, sentence number {{sentence.index}}</span>
+      <span ng-if="sentence.status == 0">Not Found in any books</span>
+    </div>
   </div>
 </div>
