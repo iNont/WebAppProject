@@ -5,13 +5,14 @@ angular.module('todoApp', ['ui.router'])
     self.result = []
     self.submit = function() {
       self.result = []
-      $http({
-        method: 'GET',
-        url: 'http://url'
-      }).then(function successCallback(response) {
-        self.result = response.result
-      }, function errorCallback(response) {
-        console.log("Error")
-      });
+      var inputSentences = self.userInput.split('. ');
+      for(var i=0; i<inputSentences.length-1;i++) {
+        inputSentences[i] += '.'
+      }
+      $http.post('url', {
+        sentences: inputSentences
+        }).success(function (response) {
+          self.result = response.result
+        })
     }
   })
