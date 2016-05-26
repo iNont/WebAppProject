@@ -10,8 +10,4 @@ angular.module('todoApp')
       url: "/home",
       templateUrl: "src/view/home.tmpl"
     })
-    .state('changepage', {
-      url: "/changepage",
-      templateUrl: "src/view/changepage.tmpl"
-    })
 });

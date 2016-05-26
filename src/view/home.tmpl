@@ -1,20 +1,10 @@
 <div class="container">
-  <h2>Todo</h2>
-  <div ng-controller="TodoListController as todoList">
-    <span>{{todoList.remaining()}} of {{todoList.todos.length}} remaining</span>
-    [ <a href="" ng-click="todoList.archive()">archive</a> ]
-    <ul class="unstyled">
-      <li ng-repeat="todo in todoList.todos">
-        <label class="checkbox">
-          <input type="checkbox" ng-model="todo.done">
-          <span class="done-{{todo.done}}">{{todo.text}}</span>
-        </label>
-      </li>
-    </ul>
-    <form ng-submit="todoList.addTodo()">
-      <input type="text" ng-model="todoList.todoText"  size="30"
-             placeholder="add new todo here">
-      <input class="btn btn-primary" type="submit" value="Add">
+  <h2>Logo</h2>
+  <div ng-controller="HomeController as ctrl">
+    <form ng-submit="ctrl.submit()">
+      <textarea rows="4" cols="50" placeholder="Enter Paragraph" ng-model="ctrl.userInput"></textarea>
+      <input class="btn btn-primary" type="submit" value="Search">
     </form>
+    {{ctrl.userInput}}
   </div>
 </div>
